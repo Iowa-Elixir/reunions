@@ -13,20 +13,22 @@
 alias Reunions.Repo
 alias Reunions.Reunion
 
-Repo.insert! %Reunion{
+Repo.delete_all Reunion
+
+Reunion.changeset(%Reunion{}, %{
   name: "Iowa Ruby Brigade",
   location: "Des Moines, IA",
   description: "The Iowa Ruby Brigade is a user group for Ruby and Rails enthusiasts."
-}
+}) |> Repo.insert!
 
-Repo.insert! %Reunion{
+Reunion.changeset(%Reunion{}, %{
   name: "Iowa |> Elixir",
   location: "Des Moines, IA",
   description: "Iowa Elixir is a user group for Elixir and Phoenix enthusiasts."
-}
+}) |> Repo.insert!
 
-Repo.insert! %Reunion{
+Reunion.changeset(%Reunion{}, %{
   name: "DSM Web Geeks",
   location: "Des Moines, IA",
   description: "We are a group of web enthusiasts with diverse interests covering the full spectrum of web and mobile design, development and marketing. We meet monthly and you are welcome to join."
-}
+}) |> Repo.insert!
