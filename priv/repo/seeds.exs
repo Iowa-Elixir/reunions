@@ -12,9 +12,13 @@
 
 alias Reunions.Repo
 alias Reunions.Reunion
+alias Reunions.User
 
+# Clear tables
 Repo.delete_all Reunion
+Repo.delete_all User
 
+# Reunion seeds
 Reunion.changeset(%Reunion{}, %{
   name: "Iowa Ruby Brigade",
   location: "Des Moines, IA",
@@ -31,4 +35,12 @@ Reunion.changeset(%Reunion{}, %{
   name: "DSM Web Geeks",
   location: "Des Moines, IA",
   description: "We are a group of web enthusiasts with diverse interests covering the full spectrum of web and mobile design, development and marketing. We meet monthly and you are welcome to join."
+}) |> Repo.insert!
+
+# User seeds
+User.changeset(%User{}, %{
+  name: "JoseLuis Torres",
+  email: "jl@joseluistorres.me",
+  password: "secret",
+  password_confirmation: "secret"
 }) |> Repo.insert!
