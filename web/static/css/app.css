@@ -1,1 +1,88 @@
 /* This file is for your main application css. */
+body {
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.wall { padding-left: 200px; }
+.wall .post-group { margin: 10px; }
+.wall .post-group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.wall .post-group .group-date { font-size: 50px; text-align: right; margin-right: 20px; }
+.wall .post-group .group-date .month { font-size: 20px; margin-right: -17px; opacity: .5; }
+.wall .post-group .posts { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; }
+.wall .post-group .posts .post-container { flex: 1; min-width: 250px; max-width: 300px; }
+.wall .post-group .post { margin: 10px; position: relative; }
+.wall .post-group .post .source { padding: 10px; font-family: 'Lato', sans-serif; background-color: #FFFFFF; border-radius: 5px 5px 0 0; }
+.wall .post-group .post .source:after { content: ""; clear: both; display: block; }
+.wall .post-group .post .source .avatar { width: 36px; height: 36px; float: left; border-radius: 3px; margin: 0 5px 5px 0; background-size: cover; }
+.wall .post-group .post .source .avatar .avatar-shade { width: 100%; height: 100%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.8); border-radius: 3px; }
+.wall .post-group .post .source .username { font-weight: 900; }
+.wall .post-group .post .source .date { color: #babbbf; font-size: 9pt; }
+.wall .post-group .post .source .message { line-height: 22px; word-wrap: break-word; }
+.wall .post-group .post .content { background-color: #FFFFFF; }
+.wall .post-group .post .content img { width: 100%; box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.3); }
+.wall .post-group .post .content p { color: #808080; padding: 20px 10px; }
+.wall .post-group .post .links a { display: block; padding: 20px 50px 20px 20px; background-color: #333333; box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.5); font-size: 15px; font-weight: bold; color: #FFFFFF; transition: padding .2s, background-position .2s; word-wrap: no-wrap; overflow: hidden; text-overflow: ellipsis; background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FFFFFF" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 511.626 511.627;" xml:space="preserve"><g><g><path d="M392.857,292.354h-18.274c-2.669,0-4.859,0.855-6.563,2.573c-1.718,1.708-2.573,3.897-2.573,6.563v91.361 c0,12.563-4.47,23.315-13.415,32.262c-8.945,8.945-19.701,13.414-32.264,13.414H82.224c-12.562,0-23.317-4.469-32.264-13.414  c-8.945-8.946-13.417-19.698-13.417-32.262V155.31c0-12.562,4.471-23.313,13.417-32.259c8.947-8.947,19.702-13.418,32.264-13.418  h200.994c2.669,0,4.859-0.859,6.57-2.57c1.711-1.713,2.566-3.9,2.566-6.567V82.221c0-2.662-0.855-4.853-2.566-6.563 c-1.711-1.713-3.901-2.568-6.57-2.568H82.224c-22.648,0-42.016,8.042-58.102,24.125C8.042,113.297,0,132.665,0,155.313v237.542  c0,22.647,8.042,42.018,24.123,58.095c16.086,16.084,35.454,24.13,58.102,24.13h237.543c22.647,0,42.017-8.046,58.101-24.13 c16.085-16.077,24.127-35.447,24.127-58.095v-91.358c0-2.669-0.856-4.859-2.574-6.57 C397.709,293.209,395.519,292.354,392.857,292.354z"/><path d="M506.199,41.971c-3.617-3.617-7.905-5.424-12.85-5.424H347.171c-4.948,0-9.233,1.807-12.847,5.424 c-3.617,3.615-5.428,7.898-5.428,12.847s1.811,9.233,5.428,12.85l50.247,50.248L198.424,304.067  c-1.906,1.903-2.856,4.093-2.856,6.563c0,2.479,0.953,4.668,2.856,6.571l32.548,32.544c1.903,1.903,4.093,2.852,6.567,2.852 s4.665-0.948,6.567-2.852l186.148-186.148l50.251,50.248c3.614,3.617,7.898,5.426,12.847,5.426s9.233-1.809,12.851-5.426  c3.617-3.616,5.424-7.898,5.424-12.847V54.818C511.626,49.866,509.813,45.586,506.199,41.971z"/></g></g></svg>'); background-position: 95% 50%; background-repeat: no-repeat; }
+.wall .post-group .post .links a:hover { background-color: #AAAAAA; padding: 20px 50px 20px 25px; background-position: 96% 50%; }
+.wall .post-group .post .links a:last-child { border-radius: 0 0 5px 5px; }
+.wall .post-group .post .shade { width: 100%; height: 100%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5); border-radius: 5px; position: absolute; top: 0; left: 0; pointer-events: none; }
+
+button a {
+  color: #FFF;
+}
+
+.alert:empty { display: none; }

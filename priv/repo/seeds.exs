@@ -9,3 +9,9 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+Reunions.Repo.delete_all Reunions.User
+
+Reunions.User.changeset(
+  %Reunions.User{}, %{name: "JoseLuis Torres", email: "jl@joseluistorres.me", password: "secret", password_confirmation: "secret"})
+|> Reunions.Repo.insert!
