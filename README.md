@@ -1,4 +1,9 @@
 # Reunions
+[![Build Status](https://semaphoreci.com/api/v1/codebycliff/reunions/branches/continuous-integration-semaphore/shields_badge.svg)](https://semaphoreci.com/codebycliff/reunions)
+
+This is an app that will initially hold Elixir Meetups, a tribute to Meetup.com.
+
+## Development
 
 To start your Phoenix app:
 
@@ -9,4 +14,3 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-This is an app that will initially hold Elixir Meetups, a tribute to Meetup.com
