@@ -23,4 +23,4 @@ dependencies:
 
 test:
   override:
-    - mix test --no-start
+    - MIX_ENV=test mix do compile --warnings-as-errors, test
