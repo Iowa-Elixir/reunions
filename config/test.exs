@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :reunions, Reunions.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DB_USERNAME"),
-  password: System.get_env("DB_PASSWORD"),
+  username: System.get_env("DB_USERNAME") || System.get_env('DATABASE_POSTGRESQL_USERNAME'),
+  password: System.get_env("DB_PASSWORD") || System.get_env('DATABASE_POSTGRESQL_PASSWORD'),
   database: "reunions_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
