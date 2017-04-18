@@ -10,7 +10,7 @@ dependencies:
     - asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
     - asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
     - asdf install erlang 19.0
-    - asdf install elixir 1.2
+    - asdf install elixir 1.4.1
     - yes | mix deps.get
     - mix local.rebar
 test:
