@@ -37,7 +37,4 @@ config :coherence,
   layout: {Reunions.LayoutView, :app},
   opts: [:authenticatable, :recoverable, :lockable, :trackable, :unlockable_with_token, :invitable, :registerable]
 
-config :coherence, Reunions.Coherence.Mailer,
-  adapter: Swoosh.Adapters.Sendgrid,
-  api_key: System.get_env("SENDGRID_API_KEY")
 # %% End Coherence Configuration %%

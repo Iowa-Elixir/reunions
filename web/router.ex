@@ -49,4 +49,12 @@ defmodule Reunions.Router do
     # Add protected routes below
   end
 
+  if Mix.env == :dev do
+    scope "/dev" do
+      pipe_through [:browser]
+
+      forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/dev/mailbox"]
+    end
+  end
+
 end
