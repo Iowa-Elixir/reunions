@@ -17,3 +17,6 @@ config :reunions, Reunions.Repo,
   database: "reunions_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :coherence, Reunions.Coherence.Mailer,
+  adapter: Swoosh.Adapters.Local

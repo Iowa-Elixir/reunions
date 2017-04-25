@@ -41,3 +41,6 @@ config :reunions, Reunions.Repo,
   database: "reunions_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :coherence, Reunions.Coherence.Mailer,
+  adapter: Swoosh.Adapters.Local
