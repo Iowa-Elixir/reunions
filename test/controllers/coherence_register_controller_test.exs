@@ -2,10 +2,8 @@ defmodule Reunions.CoherenceRegisterControllerTest do
   use Reunions.ConnCase
   import Reunions.Router.Helpers
 
-  alias Reunions.User
   @base_attrs %{email: "some@content", name: "some content"}
   @valid_attrs Enum.into [password: "secret", password_confirmation: "secret"], @base_attrs
-  @invalid_attrs %{}
 
   setup %{conn: conn} do
     {:ok, conn: conn}
