@@ -5,6 +5,7 @@ defmodule Reunions.Reunion do
     field :name, :string
     field :location, :string
     field :description, :string
+    belongs_to :user, Reunions.User
 
     timestamps()
   end
@@ -14,8 +15,8 @@ defmodule Reunions.Reunion do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :location, :description])
-    |> validate_required([:name, :location, :description])
+    |> cast(params, [:name, :location, :description, :user_id])
+    |> validate_required([:name, :location, :description, :user_id])
     |> validate_length(:description, min: 50)
   end
 end

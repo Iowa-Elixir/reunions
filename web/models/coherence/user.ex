@@ -6,6 +6,7 @@ defmodule Reunions.User do
     field :name, :string
     field :email, :string
     coherence_schema()
+    has_many :reunions, Reunions.User
 
     timestamps()
   end
