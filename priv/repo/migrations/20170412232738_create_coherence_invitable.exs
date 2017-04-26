@@ -5,7 +5,8 @@ defmodule Reunions.Repo.Migrations.CreateCoherenceInvitable do
       add :name, :string
       add :email, :string
       add :token, :string
-      timestamps
+
+      timestamps()
     end
     create unique_index(:invitations, [:email])
     create index(:invitations, [:token])
