@@ -1,0 +1,23 @@
+<h2>Show reunion</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @reunion.name %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @reunion.location %>
+  </li>
+
+  <li>
+    <strong>Date at:</strong>
+    <%= @reunion.date_at %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: reunion_path(@conn, :edit, @reunion) %>
+<%= link "Back", to: reunion_path(@conn, :index) %>

@@ -1,0 +1,6 @@
+<h2>Edit reunion</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: reunion_path(@conn, :update, @reunion) %>
+
+<%= link "Back", to: reunion_path(@conn, :index) %>

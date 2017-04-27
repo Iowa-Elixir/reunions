@@ -8,7 +8,13 @@ defmodule Reunions.ReunionTest do
       description: String.duplicate("X", 50),
       location: "some content",
       name: "some content",
-      user_id: 123
+      user_id: 123,
+      date_at: %{day: 17,
+                 hour: 14,
+                 min: 0,
+                 month: 4,
+                 sec: 0,
+                year: 2010}
     }
     changeset = Reunion.changeset(%Reunion{}, attrs)
     assert changeset.valid?
@@ -25,7 +31,13 @@ defmodule Reunions.ReunionTest do
       description: "some description",
       location: "some content",
       name: "some content",
-      user_id: 123
+      user_id: 123,
+      date_at: %{day: 17,
+                 hour: 14,
+                 min: 0,
+                 month: 4,
+                 sec: 0,
+                year: 2010}
     }
 
     changeset = Reunion.changeset(%Reunion{}, attrs)
