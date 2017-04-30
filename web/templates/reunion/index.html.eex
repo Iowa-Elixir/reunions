@@ -5,7 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Location</th>
-      <th>Date at</th>
+      <th>Start</th>
+      <th>End</th>
 
       <th></th>
     </tr>
@@ -15,7 +16,8 @@
     <tr>
       <td><%= reunion.name %></td>
       <td><%= reunion.location %></td>
-      <td><%= reunion.date_at %></td>
+      <td><%= reunion.start_at %></td>
+      <td><%= reunion.end_at %></td>
 
       <td class="text-right">
         <%= link "Show", to: reunion_path(@conn, :show, reunion), class: "btn btn-default btn-xs" %>

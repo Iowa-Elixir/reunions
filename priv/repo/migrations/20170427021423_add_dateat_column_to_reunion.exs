@@ -3,7 +3,8 @@ defmodule Reunions.Repo.Migrations.CreateReunion do
 
   def change do
     alter table(:reunions) do
-      add :date_at, :utc_datetime
+      add :start_at, :utc_datetime
+      add :end_at, :utc_datetime
     end
   end
 end

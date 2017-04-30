@@ -24,9 +24,15 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :date_at, class: "control-label" %>
-    <%= datetime_select f, :date_at, class: "form-control" %>
-    <%= error_tag f, :date_at %>
+    <%= label f, :start_at, class: "control-label" %>
+    <%= datetime_select f, :start_at, class: "form-control" %>
+    <%= error_tag f, :start_at %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :end_at, class: "control-label" %>
+    <%= datetime_select f, :end_at, class: "form-control" %>
+    <%= error_tag f, :end_at %>
   </div>
 
   <div class="form-group">

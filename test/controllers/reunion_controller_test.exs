@@ -2,15 +2,23 @@ defmodule Reunions.ReunionControllerTest do
   use Reunions.ConnCase
 
   alias Reunions.{Reunion, User}
-  @valid_attrs %{date_at: %{day: 17,
-                            hour: 14,
-                            min: 0,
-                            month: 4,
-                            sec: 0,
-                            year: 2010},
-                 location: "some content",
+
+  @valid_attrs %{location: "some content",
                  description: String.duplicate("X", 50),
-                 name: "some content"}
+                 name: "some content",
+                 start_at: %{day: 17,
+                              hour: 14,
+                              min: 0,
+                              month: 4,
+                              sec: 0,
+                             year: 2010},
+                 end_at: %{day: 17,
+                           hour: 14,
+                           min: 0,
+                           month: 4,
+                           sec: 0,
+                           year: 2010}
+                  }
   @invalid_attrs %{}
 
   setup %{conn: conn} do
