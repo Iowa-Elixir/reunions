@@ -5,6 +5,8 @@ defmodule Reunions.Reunion do
     field :name, :string
     field :location, :string
     field :description, :string
+    field :start_at, Ecto.DateTime
+    field :end_at, Ecto.DateTime
     belongs_to :user, Reunions.User
 
     timestamps()
@@ -15,8 +17,10 @@ defmodule Reunions.Reunion do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :location, :description, :user_id])
-    |> validate_required([:name, :location, :description, :user_id])
+    |> cast(params, [:name, :location, :description, :user_id,
+                     :start_at, :end_at])
+    |> validate_required([:name, :location, :description, :user_id,
+                          :start_at, :end_at])
     |> validate_length(:description, min: 50)
   end
 end

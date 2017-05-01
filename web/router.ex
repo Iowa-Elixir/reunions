@@ -47,6 +47,8 @@ defmodule Reunions.Router do
   scope "/", Reunions do
     pipe_through :protected
     # Add protected routes below
+
+    resources "/reunions", ReunionController
   end
 
   if Mix.env == :dev do

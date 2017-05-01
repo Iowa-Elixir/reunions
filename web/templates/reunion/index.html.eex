@@ -1,0 +1,32 @@
+<h2>Listing reunions</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Start</th>
+      <th>End</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for reunion <- @reunions do %>
+    <tr>
+      <td><%= reunion.name %></td>
+      <td><%= reunion.location %></td>
+      <td><%= reunion.start_at %></td>
+      <td><%= reunion.end_at %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: reunion_path(@conn, :show, reunion), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: reunion_path(@conn, :edit, reunion), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: reunion_path(@conn, :delete, reunion), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New reunion", to: reunion_path(@conn, :new) %>

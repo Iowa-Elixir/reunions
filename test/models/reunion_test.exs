@@ -1,14 +1,26 @@
 defmodule Reunions.ReunionTest do
   use Reunions.ModelCase
 
-  alias Reunions.{Reunion, User}
+  alias Reunions.{Reunion}
 
   test "changeset with valid attributes" do
     attrs = %{
       description: String.duplicate("X", 50),
       location: "some content",
       name: "some content",
-      user_id: 123
+      user_id: 123,
+      start_at: %{day: 17,
+                   hour: 14,
+                   min: 0,
+                   month: 4,
+                   sec: 0,
+                  year: 2010},
+      end_at: %{day: 17,
+                hour: 14,
+                min: 0,
+                month: 4,
+                sec: 0,
+                year: 2010}
     }
     changeset = Reunion.changeset(%Reunion{}, attrs)
     assert changeset.valid?
@@ -17,7 +29,7 @@ defmodule Reunions.ReunionTest do
   test "changeset is invalid without required attributes" do
     changeset = Reunion.changeset(%Reunion{}, %{})
     refute changeset.valid?
-    assert Enum.count(changeset.errors) == 4
+    assert Enum.count(changeset.errors) == 6
   end
 
   test "changeset is invalid with required attributes and description too short" do
@@ -25,7 +37,19 @@ defmodule Reunions.ReunionTest do
       description: "some description",
       location: "some content",
       name: "some content",
-      user_id: 123
+      user_id: 123,
+      start_at: %{day: 17,
+                   hour: 14,
+                   min: 0,
+                   month: 4,
+                   sec: 0,
+                  year: 2010},
+      end_at: %{day: 17,
+                hour: 14,
+                min: 0,
+                month: 4,
+                sec: 0,
+                year: 2010}
     }
 
     changeset = Reunion.changeset(%Reunion{}, attrs)
