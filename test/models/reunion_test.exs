@@ -1,7 +1,7 @@
 defmodule Reunions.ReunionTest do
   use Reunions.ModelCase
 
-  alias Reunions.{Reunion, User}
+  alias Reunions.{Reunion}
 
   test "changeset with valid attributes" do
     attrs = %{

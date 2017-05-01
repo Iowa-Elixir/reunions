@@ -1,7 +1,7 @@
 defmodule Reunions.ReunionControllerTest do
   use Reunions.ConnCase
 
-  alias Reunions.{Reunion, User}
+  alias Reunions.{Reunion, User, Repo}
 
   @valid_attrs %{location: "some content",
                  description: String.duplicate("X", 50),
@@ -41,8 +41,8 @@ defmodule Reunions.ReunionControllerTest do
     assert html_response(conn, 200) =~ "New reunion"
   end
 
-  test "creates resource and redirects when data is valid", %{conn: conn} do
-    conn = post conn, reunion_path(conn, :create), reunion: @valid_attrs
+  test "creates resource and redirects when data is valid", context do
+    conn = post context[:conn], reunion_path(context[:conn], :create), reunion: Map.merge(@valid_attrs, %{user_id: context[:user].id})
     assert redirected_to(conn) == reunion_path(conn, :index)
     assert Repo.get_by(Reunion, @valid_attrs)
   end
@@ -70,9 +70,9 @@ defmodule Reunions.ReunionControllerTest do
     assert html_response(conn, 200) =~ "Edit reunion"
   end
 
-  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+  test "updates chosen resource and redirects when data is valid", context do
     reunion = Repo.insert! %Reunion{}
-    conn = put conn, reunion_path(conn, :update, reunion), reunion: @valid_attrs
+    conn = put context[:conn], reunion_path(context[:conn], :update, reunion), reunion: Map.merge(@valid_attrs, %{user_id: context[:user].id})
     assert redirected_to(conn) == reunion_path(conn, :show, reunion)
     assert Repo.get_by(Reunion, @valid_attrs)
   end
